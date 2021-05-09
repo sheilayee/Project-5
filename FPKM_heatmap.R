@@ -30,7 +30,8 @@ FPKM_0 <- FPKM_0  %>%  select(FPKM, tracking_id, gene_short_name) # select the c
 sig_de_genes  <- diff_expr_file[diff_expr_file$significant =='yes',]
 x <- sig_de_genes %>% filter(sig_de_genes$log2.fold_change. > 0 ) # 1084 genes that are up-regulated
 y <- sig_de_genes %>% filter(sig_de_genes$log2.fold_change. < 0 ) # 1055 genes that are down-regulated
-sig_de_genes <- diff_expr_file %>% filter(diff_expr_file$significant =='yes') %>% arrange(q_value) %>% slice_head(n=1000) # change to 10 when looking at top 10 genes
+sig_de_genes <- diff_expr_file %>% filter(diff_expr_file$significant =='yes') %>% arrange(q_value) %>% slice_head(n=1000) 
+# change to n=10 when looking at top 10 genes heatmap in supplementary materials of the report
 
 # Rename the columns in both FPKM tables
 colnames(FPKM_0) <- c("P0_1", "tracking_id", "gene_short_name") # rename tracking_id 
