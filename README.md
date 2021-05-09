@@ -1,9 +1,9 @@
 # Project Description
+While adult mammalian hearts possess limited regenerative ability upon cardiac injuries, neonatal cardiac myocytes are known to regenerate via proliferation of pre-existing cardiomyocytes. The molecular mechanisms and transcriptional regulators that oversee this regenerative process remain unclear. O'Meara et al. (2015) sought to elucidate these transcriptional changes and determine if regenerating cardiac myocytes revert to a less differentiated state. This project seeks to reproduce some of those findings. 
 
 This repository contains the scripts used to process and analyze the data.
 
 O’Meara, C. C., Wamstad, J. A., Gladstone, R. A., Fomovsky, G. M., Butty, V. L., Shrikumar, A., Gannon, J. B., Boyer, L. A., & Lee, R. T. (2015). Transcriptional Reversion of Cardiac Myocyte Fate During Mammalian Cardiac Regeneration. Circulation Research, 116(5), 804–815. https://doi.org/10.1161/CIRCRESAHA.116.304269
-
 
 # Contributor
 
