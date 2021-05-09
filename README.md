@@ -35,7 +35,7 @@ samtools index accepted_hits.bam
 This outputs *accepted_hits.bam.bai*. 
 
 #### rseqc.qsub ####
-Performs quality control analysis on RNA-seq data and alignment.
+Uses RseQC to performs quality control analysis on RNA-seq data and alignment.
 
 To run, submit as a job on the cluster: 
 ```
@@ -44,7 +44,7 @@ qsub rseqc.qsub
 This outputs *gene_body.geneBodyCoverage.curves.pdf* and *inner_distance.inner_distance_plot.pdf* plots. 
 
 #### run_cufflinks.qsub ####
-Determine FPKM values of reads mapped to genomic regions. Run Cufflinks on *P0_1_tophat/accepted_hits.bam*.
+Uses Cufflinks to determine FPKM values of reads mapped to genomic regions. Run Cufflinks on *P0_1_tophat/accepted_hits.bam*.
 
 To run, submit as a job on the cluster: 
 ```
@@ -53,7 +53,7 @@ qsub run_cufflinks.qsub
 This outputs *genes.fpkm_tracking* file which contains FPKM values for all genes. 
 
 #### run_cuffdiff.qsub ####
-Identify differentially expressed genes in the P0_1 sample. 
+Uses Cuffdiff to identify differentially expressed genes in the P0_1 sample. 
 
 To run, submit as a job on the cluster: 
 ```
