@@ -39,7 +39,7 @@ Performs quality control analysis on RNA-seq data and alignment.
 
 To run, submit as a job on the cluster: 
 ```
-qsub fastqc.sh
+qsub rseqc.qsub
 ```
 This outputs *gene_body.geneBodyCoverage.curves.pdf* and *inner_distance.inner_distance_plot.pdf* plots. 
 
