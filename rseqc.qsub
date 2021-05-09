@@ -1,0 +1,17 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -j y
+#$ -pe mpi_16_tasks_per_node 16
+
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+# perform quality control metrics
+module load python3 samtools rseqc R
+
+geneBody_coverage.py -r /project/bf528/project_2/reference/annot/mm9.bed -i accepted_hits.bam -o gene_body
+inner_distance.py -r /project/bf528/project_2/reference/annot/mm9.bed -i accepted_hits.bam -o inner_distance
+bam_stat.py -i accepted_hits.bam

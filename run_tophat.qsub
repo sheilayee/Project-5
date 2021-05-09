@@ -1,0 +1,29 @@
+#!/bin/bash -l
+
+#$ -P bf528
+#$ -cwd
+#$ -j y
+#$ -pe mpi_16_tasks_per_node 16
+
+echo "Running job $JOB_ID"
+echo "Started: $(date +%F)"
+echo "Running in directory: $PWD"
+
+# load alignment utilities
+module load python2
+module load samtools/0.1.19
+module load bowtie2
+module load boost
+module load tophat
+
+##### TopHat
+# align two FASTQ files against the mmf9 reference - they are the P0_1 and P0_2 samples 
+# TopHat arguments are found from /project/bf528/project_2/scripts/tophat_args.txt  
+
+# paths
+fastq1=/projectnb2/bf528/users/dachshund/project_2/project-2-project-2-dachsund/data/P0_1_1.fastq
+fastq2=/projectnb2/bf528/users/dachshund/project_2/project-2-project-2-dachsund/data/P0_1_2.fastq
+reference=/project/bf528/project_2/reference/mm9 # the reference mouse genome
+
+tophat -r 200 -G /project/bf528/project_2/reference/annot/mm9.gtf --segment-length=20 --segment-mismatches=1 --no-novel-juncs -o P0_1_tophat -p 16 $reference $fastq1 $fastq2
+ 

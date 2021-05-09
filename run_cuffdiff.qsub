@@ -1,0 +1,25 @@
+#!/bin/bash
+
+#$ -P bf528
+#$ -cwd
+#$ -j y 
+#$ -pe mpi_16_tasks_per_node 16
+#$ -l h_rt=48:00:00
+
+source /etc/bashrc
+module load cufflinks
+
+#set file path to where accepted_hits.bam is
+P0BAM=/usr4/bf528/scyee/project_5/project_5/P0_1_tophat
+
+SAMPLEDIR=/project/bf528/project_2/data/samples/ # file path to the remaining samples (P0_2, Ad_1, Ad_2)
+P0REPS=$P0BAM,$SAMPLEDIR/P0_2/accepted_hits.bam
+ADREPS=$SAMPLEDIR/Ad_1/accepted_hits.bam,$SAMPLEDIR/Ad_2/accepted_hits.bam
+
+LABEL="P0,Ad"
+OUTDIR=cuffdiff_out
+FASTA=/project/bf528/project_2/reference/mm9.fa
+
+# cuffdiff is a tool in the cufflinks suite to identify differentially expressed genes
+cuffdiff -p 16 -L $LABEL -u -b $FASTA -o $OUTDIR $SAMPLEDIR/merged_asm/merged.gtf $P0REPS $ADREPS
+
