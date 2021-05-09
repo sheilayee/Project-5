@@ -59,7 +59,7 @@ To run, submit as a job on the cluster:
 ```
 qsub run_cuffdiff.qsub
 ```
-This outputs  "*genes_exp.diff*. 
+This outputs *genes_exp.diff*. 
 
 #### FPKM_histogram.R ####
 Creates a histogram of FPKM values from the P0_1 sample. Requires *genes.fpkm_tracking* to run. Run using RStudio. 
