@@ -17,7 +17,7 @@ module load boost
 module load tophat
 
 ##### TopHat
-# align two FASTQ files against the mmf9 reference - they are the P0_1 and P0_2 samples 
+# align two FASTQ files against the mmf9 reference 
 # TopHat arguments are found from /project/bf528/project_2/scripts/tophat_args.txt  
 
 # paths
