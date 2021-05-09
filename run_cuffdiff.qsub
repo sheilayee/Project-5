@@ -9,7 +9,7 @@
 source /etc/bashrc
 module load cufflinks
 
-#set file path to where accepted_hits.bam is
+# set file path to where accepted_hits.bam is
 P0BAM=/usr4/bf528/scyee/project_5/project_5/P0_1_tophat
 
 SAMPLEDIR=/project/bf528/project_2/data/samples/ # file path to the remaining samples (P0_2, Ad_1, Ad_2)
